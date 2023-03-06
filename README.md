@@ -1,0 +1,1 @@
+This Repository comprises of solutions to the ALX-SE projects. The alx-higher_level_programming uses most of the Python programming language and the task solved will aid in exploring higher level programming languages concepts.
