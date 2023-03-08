@@ -20,6 +20,7 @@ listint_t *insert_node(listint_t **head, const int n)
 	if (head == (void *) 0 || *head == (void *) 0)
 	{
 		tmp->next = (void *) 0;
+		*head = tmp;
 		return (tmp);
 	}
 	if ((*head)->n > n)
