@@ -7,3 +7,5 @@ def fizzbuzz():
             print("Buzz", end=("\n" if i == 100 else " "))
         elif (i % 3) == 0:
             print("Fizz", end=("\n" if i == 100 else " "))
+        else:
+            print("{0}".format(i), end=("\n" if i == 100 else " "))
