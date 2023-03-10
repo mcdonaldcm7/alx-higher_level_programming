@@ -3,8 +3,8 @@ from calculator_1 import add, sub, mul, div
 from sys import exit, argv
 
 if __name__ == "__main__":
-    a = int(argv[1].split(".")[0])
-    b = int(argv[3].split(".")[0])
+    a = int(argv[1])
+    b = int(argv[3])
 
     def result(opr):
         if opr == '+':
