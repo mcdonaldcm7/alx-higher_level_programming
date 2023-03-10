@@ -5,6 +5,7 @@ from sys import exit, argv
 a = int(argv[1])
 b = int(argv[3])
 
+
 def result(opr):
     if opr == '+':
         return (add(a, b))
@@ -15,6 +16,7 @@ def result(opr):
     elif opr == '/':
         return (div(a, b))
     return (None)
+
 
 if __name__ == "__main__":
     if len(argv) != 4:
