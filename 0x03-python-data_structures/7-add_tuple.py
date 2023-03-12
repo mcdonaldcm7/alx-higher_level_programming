@@ -11,4 +11,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tuple_b) > 1:
         t_b += tuple_b[1]
     return ((t_a, t_b))
-
