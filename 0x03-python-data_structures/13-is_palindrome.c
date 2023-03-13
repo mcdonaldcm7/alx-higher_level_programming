@@ -14,7 +14,7 @@ listint_t *get_2half(listint_t *head)
 	listint_t *fast, *slow;
 
 	fast = slow = head;
-	while (fast->next != (void *) 0 && fast != (void *) 0)
+	while (fast != (void *) 0 && fast->next != (void *) 0)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
