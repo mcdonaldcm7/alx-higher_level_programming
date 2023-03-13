@@ -35,6 +35,9 @@ int is_palindrome(listint_t **head)
 	slow = fast = *head;
 	half = get_2half(*head);
 	revhead = prev = (void *) 0;
+
+	if (head == (void *) 0 || *head == (void *) 0)
+		return (1);
 	while (half != (void *) 0)
 	{
 		revhead = push_node(half, prev);
