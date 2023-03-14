@@ -19,7 +19,6 @@ listint_t *get_2half(listint_t *head)
 		slow = slow->next;
 		fast = fast->next->next;
 	}
-
 	return (slow);
 }
 
@@ -81,6 +80,8 @@ int is_palindrome(listint_t **head)
 	slow = fast = *head;
 	curr = get_2half(*head);
 	bslow = get_2bhalf(*head);
+	if (bslow == (void *) 0)
+		return (1);
 	nxt = prev = (void *) 0;
 	while (curr != (void *) 0)
 	{
