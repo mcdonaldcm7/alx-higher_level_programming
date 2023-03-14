@@ -92,6 +92,10 @@ int is_palindrome(listint_t **head)
 	bslow->next = prev;
 	while (fast != (void *) 0 && fast->next != (void *) 0)
 	{
+		if (slow->n != prev->n)
+		{
+			return 0;
+		}
 		slow = slow->next;
 		fast = fast->next->next;
 		prev = prev->next;
