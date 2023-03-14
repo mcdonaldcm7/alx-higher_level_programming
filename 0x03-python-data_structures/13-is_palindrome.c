@@ -24,6 +24,30 @@ listint_t *get_2half(listint_t *head)
 }
 
 /**
+ * get_2bhalf - Returns a pointer to the halfpoint - 1 of the singly linked list
+ *
+ * @head: Pointer to the head of the singly linked list
+ *
+ * Return: Pointer to the node before the midpoint of the list
+ */
+listint_t *get_2bhalf(listint_t *head)
+{
+        listint_t *fast, *slow, *bslow;
+
+        fast = slow = head;
+	bslow = (void *) 0;
+        while (fast != (void *) 0 && fast->next != (void *) 0)
+        {
+		bslow = slow;
+                slow = slow->next;
+                fast = fast->next->next;
+        }
+
+        return (bslow);
+}
+
+
+/**
  * push_node - Uses a stack technique to reverse the midpoint of the list
  *
  * @head: Pointer to the head of the list
@@ -52,35 +76,25 @@ listint_t *push_node(listint_t *head, listint_t *prev)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *half, *revhead, *slow, *fast, *prev, *iter;
+	listint_t *curr, *nxt, *slow, *fast, *prev, *bslow;
 
 	slow = fast = *head;
-	half = get_2half(*head);
-	revhead = prev = (void *) 0;
-	while (half != (void *) 0)
+	curr = get_2half(*head);
+	bslow = get_2bhalf(*head);
+	nxt = prev = (void *) 0;
+	while (curr != (void *) 0)
 	{
-		revhead = push_node(half, prev);
-		if (revhead == (void *) 0)
-		{
-			free_listint(prev);
-			return (0);
-		}
-		half = half->next;
-		prev = revhead;
+		nxt = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = nxt;
 	}
-
-	iter = revhead;
+	bslow->next = prev;
 	while (fast != (void *) 0 && fast->next != (void *) 0)
 	{
-		if (slow->n != iter->n)
-		{
-			free_listint(revhead);
-			return (0);
-		}
 		slow = slow->next;
 		fast = fast->next->next;
-		iter = iter->next;
+		prev = prev->next;
 	}
-	free_listint(revhead);
 	return (1);
 }
