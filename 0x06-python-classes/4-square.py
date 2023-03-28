@@ -3,6 +3,9 @@
 This module contains a fairly simple Square class with safety checks for the
 private instance variable __size and an area method to compute and return the
 area of the square based on the size given.
+
+The square class also includes a getter and a setter for the private variable
+size
 """
 
 
