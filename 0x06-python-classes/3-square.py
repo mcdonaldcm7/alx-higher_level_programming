@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This module contains a fairly simple Square class with safety checks for the
-private instance variable __size
+private instance variable __size and an area method to compute the area of the
+square based on the size given
 """
 
 
