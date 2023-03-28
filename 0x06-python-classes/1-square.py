@@ -3,6 +3,7 @@
 This module contains a simple Square class for task 1 (Square with size)
 """
 
+
 class Square:
     """A simple class with one public instance variable
 
