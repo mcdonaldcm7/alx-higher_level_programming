@@ -22,7 +22,7 @@ class Square:
         size (int): Size of the square
         position (tuple): Coordinate of a square
     """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         if type(size) is int:
             self.__size = size
             self.__position = position
@@ -108,7 +108,7 @@ class Square:
             value (tuple): Value to set position to
         """
         if (type(value) is tuple and len(value) == 2
-            and (type(value[0]) is int) and (type(value[1]) is int)):
+                and (type(value[0]) is int) and (type(value[1]) is int)):
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
