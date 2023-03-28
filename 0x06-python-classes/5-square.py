@@ -7,6 +7,8 @@ area of the square based on the size given.
 It also comprise of a getter and a setter to get and set the private instance
 variable size. Type checks and value checks are also included to ensure only
 integer values greater than 0 can be set.
+    The my_print method prints a square with the '#' character, the size of the
+square depends on the size attribute
 """
 
 
