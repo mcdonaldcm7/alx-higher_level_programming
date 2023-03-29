@@ -1,4 +1,28 @@
 #!/usr/bin/python3
+"""
+This module contains the definition for two classes, the Node class and the
+SinglyLinkedList class.
+
+Node:
+    This class contains two private instance variable.
+    
+    data (int): Holds the integer value for the node
+    next_node (Node): The pointer to the next Node
+
+    Getters and Setter for the both variables are defined in the class
+
+SinglyLinkedList:
+    This class creates a singly linked list using the 'Node' class as nodes for
+    the list. There is only one private instance variable defined in this class
+
+    head (Node): A Pointer to the head of the linked list
+
+    It also defines a function 'sorted_insert' which inserts nodes to the list
+    in ascending order. This class also override the built-in '__str__'
+    function to print each node in the list in a new line
+"""
+
+
 class Node:
     """A Node class, like a node in a SinglyLinkedList has two member variables
 
