@@ -5,7 +5,7 @@ SinglyLinkedList class.
 
 Node:
     This class contains two private instance variable.
-    
+ 
     data (int): Holds the integer value for the node
     next_node (Node): The pointer to the next Node
 
