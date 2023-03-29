@@ -125,9 +125,8 @@ class Square:
             return ('\n')
         else:
             ret += '\n' * self.__position[1]
-            for i in range(1, (self.__size + 1)):
-                ret += ' ' * self.__position[0]
-                for j in range(self.__size):
-                    ret += '#'
-                ret += '\n'
+            for i in range(self.__size):
+                ret += ' ' * self.__position[0] + '#' * self.__size
+                if i != (self.size - 1):
+                    ret += '\n'
         return (ret)
