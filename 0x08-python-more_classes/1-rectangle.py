@@ -38,11 +38,6 @@ class Rectangle:
     def width(self):
         """
         A simple getter for the private width attribute
-
-        Example:
-            >>> rect = Rectangle(12, 17)
-            >>> rect.width
-            12
         """
         return (self.__width)
 
@@ -54,14 +49,6 @@ class Rectangle:
         Parameter(s)
         ------------
         value (int): Value to assign to the width attribute
-
-        Example:
-            >>> rec = Rectangle(5, 10)
-            >>> rec.width
-            5
-            >>> rec.width(6)
-            >>> rec.width
-            6
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -73,11 +60,6 @@ class Rectangle:
     def height(self):
         """
         A simple getter for the private height attribute
-
-        Example:
-            >>> rect = Rectangle(12, 17)
-            >>> rect.height
-            17
         """
         return (self.__height)
 
@@ -89,14 +71,6 @@ class Rectangle:
         Parameter(s)
         ------------
         value (int): Value to assign to the height attribute
-
-        Example:
-            >>> rec = Rectangle(5, 10)
-            >>> rec.height
-            10
-            >>> rec.height(14)
-            >>> rec.height
-            14
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
