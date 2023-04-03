@@ -12,7 +12,14 @@ equal to or greater than 0 (>= 0)
 
 class Rectangle:
     """
-    A simple empty class name Rectangle
+    A simple empty class named Rectangle
+    This class contains checks to ensure that the private attributes width and
+    height can only be assgined with valid types and values.
+    i.e Only integers >= 0
+
+    Attributes:
+        width (int): Width of the rectangle
+        height (int): Height of the rectangle
     """
 
     def __init__(self, width=0, height=0):
