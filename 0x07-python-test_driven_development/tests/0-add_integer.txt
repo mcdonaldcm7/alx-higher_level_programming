@@ -1,0 +1,27 @@
+>>> import sys
+>>> sys.path.append('../')
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(17, 43)
+60
+>>> add_integer("Hello") #docetst: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("a must be an integer")
+TypeError: a must be an integer
+>>> add_integer(-7.2, "School") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("b must be an integer")
+TypeError: b must be an integer
+>>> add_integer(12.794, 88.797)
+100
+>>> add_integer(None, 17) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("a must be an integer")
+TypeError: a must be an integer
+>>> add_integer(12, None) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("b must be an integer")
+TypeError: b must be an integer
