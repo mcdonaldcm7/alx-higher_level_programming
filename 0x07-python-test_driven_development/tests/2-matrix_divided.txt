@@ -1,0 +1,45 @@
+>>> import sys
+>>> sys.path.append('../')
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[2, 4, 6], [8, 10, 12]]
+>>> print(matrix_divided(matrix, 2))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+>>> print(matrix)
+[[2, 4, 6], [8, 10, 12]]
+>>> matrix = [[3, 9, '12'], [15, 18, 21]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix)
+[[3, 9, '12'], [15, 18, 21]]
+>>> matrix = [[3, 9, 12], [15, 18, [21, 24, 27]]]
+>>> print(matrix_divided(matrix, 3)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix)
+[[3, 9, 12], [15, 18, [21, 24, 27]]]
+>>> matrix = [[1, 4, 2, 8], [7, 7, 7]]
+>>> new_matrix = matrix_divided(matrix, 2) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+>>> matrix = [[2, 4, 6], [8, 10, 12]]
+>>> new_matrix = matrix_divided(matrix, "2") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("div must be a number")
+TypeError: div must be a number
+>>> matrix = [[2, 4, 6], [8, 10, 12]]
+>>> new_matrix = matrix_divided(matrix, 0) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+        raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
