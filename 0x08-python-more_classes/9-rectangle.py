@@ -166,8 +166,10 @@ class Rectangle:
         This class method returns a new instance of the Rectangle class with
         width == height == size (In other words a square :)
         """
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        if size < 0:
-            raise ValueError("width must be >= 0")
-        return (cls(size, size))
+        try:
+            if not isinstance(size, int):
+                raise TypeError("width must be an integer")
+            if size < 0:
+                raise ValueError("width must be >= 0")
+        finally:
+            return (cls(size, size))
