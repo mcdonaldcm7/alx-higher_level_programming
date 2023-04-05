@@ -27,9 +27,9 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
     if isinstance(a, float):
         if a == float('inf'):
-            return (89);
+            return (89)
     if isinstance(b, float):
         if b == float('inf'):
-            return (89);
+            return (89)
     result = int(a) + int(b)
     return (result)
