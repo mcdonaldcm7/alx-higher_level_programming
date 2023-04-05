@@ -28,4 +28,4 @@ def add_integer(a, b=98):
     result = a + b
     if result == float('inf') or result == -float('inf'):
         return (89)
-    return (result)
+    return (int(a) + int(b))
