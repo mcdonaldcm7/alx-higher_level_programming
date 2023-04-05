@@ -1,0 +1,18 @@
+>>> import sys
+>>> sys.path.append('../')
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation(4) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise: TypeError("text must be a string")
+TypeError: text must be a string
+>>> text_indentation("What is it?Your name I mean.Tell me")
+What is it?
+<BLANKLINE>
+Your name I mean.
+<BLANKLINE>
+Tell me
+>>> text_indentation() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError:...
