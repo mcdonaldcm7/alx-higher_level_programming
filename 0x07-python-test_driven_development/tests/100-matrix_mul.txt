@@ -74,13 +74,13 @@ TypeError: m_b must be a list of lists
 >>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
 Traceback (most recent call last):
 ...
-	raise TypeError("m_a can't be empty")
-TypeError: m_a can't be empty
+	raise ValueError("m_a can't be empty")
+ValueError: m_a can't be empty
 >>> m_a = m_b
 >>> m_b = [[]]
 >>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
 Traceback (most recent call last):
 ...
-	raise TypeError("m_b can't be empty")
-TypeError: m_b can't be empty
+	raise ValueError("m_b can't be empty")
+ValueError: m_b can't be empty
 
