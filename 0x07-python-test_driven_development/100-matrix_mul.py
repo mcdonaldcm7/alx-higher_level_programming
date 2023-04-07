@@ -36,7 +36,7 @@ def matrix_mul(m_a, m_b):
     mx_row_a = len(m_a)
     mx_row_b = len(m_b)
     if mx_row_a == 0:
-        raise ValueError("m_a can_t be empty")
+        raise ValueError("m_a can't be empty")
     if mx_row_b == 0:
         raise ValueError("m_b can't be empty")
     mx_col_a = len(m_a[0])
