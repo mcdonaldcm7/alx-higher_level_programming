@@ -8,7 +8,7 @@ for the computation hence the lazy added to the function name
 import numpy as np
 
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     """
     This function multiplies and returns the product of two matrices created
     using the numpy module.
