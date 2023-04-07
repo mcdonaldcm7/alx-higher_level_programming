@@ -1,75 +1,17 @@
 >>> import sys
 >>> sys.path.append('../')
->>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 >>> m_a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 >>> m_b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
->>> print(matrix_mul(m_a, m_b))
-[[30, 24, 18], [84, 69, 54], [138, 114, 90]]
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[ 30  24  18]
+ [ 84  69  54]
+ [138 114  90]]
 >>> print(m_a)
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 >>> print(m_b)
 [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
->>> print(matrix_mul(m_b, m_a))
-[[90, 114, 138], [54, 69, 84], [18, 24, 30]]
->>> m_a = [[1, 2, 3], [4, "5", 6], [7, 8, 9.7]]
->>> print(matrix_mul(m_b, m_a)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = [[]]
->>> m_c = matrix_mul(m_a, m_b) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = [[1, 2, 3]]
->>> m_b = [[3, 2, 1], [2, 8], [7, 4, 3, 2]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_b = [[3, 2, 1, 4], [7, 9, 8, 1]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = 7
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = [1, 2, 3]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = "School"
->>> m_b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = m_b
->>> m_b = "LQ McDonald"
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = [[1, 4, 7], [10, 13, 16], [19, 22, 25]]
->>> m_b = [8, 9, 10]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = []
->>> m_b = [[1], [2], [3]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = m_b
->>> m_b = [[]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> print(matrix_mul(m_a)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = [[1, 2, 3], [4, 6], [8, 7, 9]]
->>> m_b = [[1, 2], [3, 4], [5, 6]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
->>> m_a = [[1, 2, 8], ["Hello", 4, "Hi"]]
->>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
+>>> print(lazy_matrix_mul(m_b, m_a))
+[[ 90 114 138]
+ [ 54  69  84]
+ [ 18  24  30]]
