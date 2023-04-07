@@ -48,3 +48,39 @@ Traceback (most recent call last):
 ...
 	raise TypeError("m_a must be a list of lists")
 TypeError: m_a must be a list of lists
+>>> m_a = "School"
+>>> m_b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("m_a must be a list")
+TypeError: m_a must be a list
+>>> m_a = m_b
+>>> m_b = "LQ McDonald"
+>>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("m_b must be a list")
+TypeError: m_b must be a list
+>>> m_a = [[1, 4, 7], [10, 13, 16], [19, 22, 25]]
+>>> m_b = [8, 9, 10]
+>>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("m_b must be a list of lists")
+TypeError: m_b must be a list of lists
+>>> m_a = []
+>>> m_b = [[1], [2], [3]]
+>>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("m_a can't be empty")
+TypeError: m_a can't be empty
+>>> m_a = m_b
+>>> m_b = [[]]
+>>> print(matrix_mul(m_a, m_b)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+	raise TypeError("m_b can't be empty")
+TypeError: m_b can't be empty
+
