@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 This module contains the definition of the inherits_from function which checks
-if an object is an instance of a class that inherited (directly or indirectly)
-from the specified class
+if an object is an instance of a class that inherits the specified class
+(directly or indirectly)
 """
 
 
