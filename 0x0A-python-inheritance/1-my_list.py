@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module contains the MyList class which inherits the list class and adds
-a new method called print_sorted 
+a new method called print_sorted
 """
 
 
