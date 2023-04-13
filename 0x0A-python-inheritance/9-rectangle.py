@@ -39,3 +39,10 @@ class Rectangle(BaseGeometry):
         """
 
         return (self._width * self._height)
+
+    def __str__(self):
+        """
+        Defining the string representation for the rectangle
+        """
+
+        return ("[Rectangle] {0:d}/{1:d}".format(self._width, self._height))
