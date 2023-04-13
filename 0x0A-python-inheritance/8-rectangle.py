@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module contains the definition of a simple Rectangle class that inherits
-from the 'BaseGeometry' class
+the 'BaseGeometry' class
 """
 
 
@@ -23,7 +23,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    A simple Rectangle class that inherits from BaseGeometry using the
+    A simple Rectangle class that inherits the BaseGeometry using the
     integer_validator function to assert the parameters for the Rectangle
     """
 
