@@ -52,11 +52,7 @@ class Student:
         json
         """
 
-        if len(json) == 0:
-            self.first_name = ""
-            self.last_name = ""
-            self.age = 0
-        else:
+        if len(json) != 0:
             self.first_name = json['first_name']
             self.last_name = json['last_name']
             self.age = json['age']
