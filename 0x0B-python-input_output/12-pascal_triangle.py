@@ -12,7 +12,7 @@ def pascal_triangle(n):
 
     if n <= 0:
         return ([])
-    
+
     triangle = []
     for curr_index in range(n):
         new_index = []
@@ -27,4 +27,3 @@ def pascal_triangle(n):
                     new_index.append(prev_index[i] + prev_index[i - 1])
         triangle.append(new_index)
     return (triangle)
-
