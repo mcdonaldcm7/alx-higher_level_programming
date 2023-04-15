@@ -29,7 +29,7 @@ class Student:
         attrs is the list of attributes to return, if attrs is None return all
         """
 
-        if attrs is None or len(attrs) == 0:
+        if attrs is None:
             return ({
                         'age': self.age,
                         'last_name': self.last_name,
@@ -37,7 +37,7 @@ class Student:
                 })
         else:
             dic = {}
-            for i in range(-1, (len(attrs))):
+            for i in range(-1, (len(attrs) - 1)):
                 if attrs[i] == 'first_name':
                     dic[attrs[i]] = self.first_name
                 elif attrs[i] == 'last_name':
