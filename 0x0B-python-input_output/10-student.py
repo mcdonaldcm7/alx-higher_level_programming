@@ -29,7 +29,7 @@ class Student:
         attrs is the list of attributes to return, if attrs is None return all
         """
 
-        if attrs is None:
+        if attrs is None or len(attrs) == 0:
             return ({
                         'age': self.age,
                         'last_name': self.last_name,
