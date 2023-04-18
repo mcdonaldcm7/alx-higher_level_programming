@@ -22,8 +22,8 @@ class Square(Rectangle):
         Defining the string representation of the Square class
         """
 
-        return ("[Square] ({0:d}) {1:d}/{2:d} - {3:d}\
-                ".format(self.id, self.x, self.y, self.width))
+        return ("[Square] ({}) {}/{} - {}".
+                format(self.id, self.x, self.y, self.width))
 
     @property
     def size(self):
@@ -44,7 +44,7 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.width = value
-        self.height 
+        self.height
 
     def update(self, *args, **kwargs):
         """
