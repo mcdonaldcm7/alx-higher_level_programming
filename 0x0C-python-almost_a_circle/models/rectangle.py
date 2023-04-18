@@ -41,10 +41,18 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        Getter for width
+        """
+
         return (self.__width)
 
     @width.setter
     def width(self, value):
+        """
+        Setter for width with type checks
+        """
+
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -53,10 +61,18 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        Getter for height
+        """
+
         return (self.__height)
 
     @height.setter
     def height(self, value):
+        """
+        Setter for height with type safety
+        """
+
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -65,10 +81,18 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+        Getter for x
+        """
+
         return (self.__x)
 
     @x.setter
     def x(self, value):
+        """
+        Setter for x with type safety
+        """
+
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -77,10 +101,18 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """
+        Getter for y
+        """
+
         return (self.__y)
 
     @y.setter
     def y(self, value):
+        """
+        Setter for y with type safety
+        """
+
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -95,6 +127,10 @@ class Rectangle(Base):
         return (self.__width * self.__height)
 
     def display(self):
+        """
+        Displays the rectangle represented by Rectangle using the # character
+        """
+
         print("\n" * self.y, end="")
         for i in range(self.height):
             print(" " * self.x, end="")
@@ -109,6 +145,10 @@ class Rectangle(Base):
                 format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
+        """
+        Update the values of the current instance using the value from args or
+        optionally kwargs
+        """
 
         if args is not None and len(args) > 0:
             index = 0
@@ -138,10 +178,14 @@ class Rectangle(Base):
                     self.__x = value
 
     def to_dictionary(self):
+        """
+        Return a dictionary representation of the current instance
+        """
+
         return ({
             "x": self.x,
             "y": self.y,
             "id": self.id,
-            "height":self.height,
+            "height": self.height,
             "width": self.width
             })
