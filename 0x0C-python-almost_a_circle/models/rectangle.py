@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-from models.base import Base
-
-
 """
 This module contains the Ractangle class which is a subclass of the Base class,
 It contains attributes that represents a Rectangle, type checks to ensure only
 the right type is assigned, method to retrieve the properties of the Rectangle
 class such as the height, width, x, y position, and the area
 """
+
+
+from models.base import Base
 
 
 class Rectangle(Base):
