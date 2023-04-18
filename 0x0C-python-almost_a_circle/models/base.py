@@ -58,6 +58,8 @@ class Base:
         Returns the list of the JSON string representation json_string
         """
 
+        if (json_string is None):
+            return ([])
         return (json.loads(json_string))
 
     @classmethod
