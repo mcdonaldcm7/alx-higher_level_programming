@@ -68,7 +68,11 @@ class Base:
         Returns an instance with all attributes already set
         """
 
-        dummy = cls(3, 5, 1)
+        dummy = None
+        if "size" in dictionary.keys():
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
         dummy.update(**dictionary)
         return (dummy)
 
