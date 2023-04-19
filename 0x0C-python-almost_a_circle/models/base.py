@@ -6,6 +6,7 @@ classes
 
 
 import json
+import os
 
 
 class Base:
@@ -79,7 +80,17 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        Not yet implemented
+        Return a list of instances from a file. The filename is the
+        '<cls.__name__>.json'
         """
 
-        pass
+        filename = "{0:s}.json".format(cls.__name__)
+        if not os.path.exists(filename):
+            return ([])
+        dict_list = None
+        ret = []
+        with open(filename, 'r') as f:
+            dict_list = cls.from_json_string(f.read())
+        for i in dict_list:
+            ret.append(cls.create(**i))
+        return (ret)
