@@ -7,6 +7,7 @@ classes
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -93,4 +94,55 @@ class Base:
             dict_list = cls.from_json_string(f.read())
         for i in dict_list:
             ret.append(cls.create(**i))
+        return (ret)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serializes a list of objects and stores them as csv files
+        """
+
+        filename = "{0:s}.csv".format(cls.__name__)
+        data = []
+        for objs in list_objs:
+            row = [objs.id, objs.width, objs.height, objs.x, objs.y]
+            data.append(row)
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for row in data:
+                writer.writerow(row)
+        csvfile.close()
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes the csv file with the format <class_name>.csv and returns
+        a list of object instances initialized with the content of the file
+        """
+
+        filename = "{0:s}.csv".format(cls.__name__)
+        data = []
+        with open(filename, 'r') as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                data.append(row)
+        csvfile.close()
+        dict_list = []
+        for row in data:
+            row_dict = {}
+            if row[1] == row[2]:
+                row_dict["id"] = int(row[0])
+                row_dict["size"] =  int(row[1])
+                row_dict["x"] = int(row[3])
+                row_dict["y"] = int(row[4])
+            else:
+                row_dict["id"] =  int(row[0])
+                row_dict["width"] = int(row[1])
+                row_dict["height"] =  int(row[2])
+                row_dict["x"] = int(row[3])
+                row_dict["y"] = int(row[4])
+            dict_list.append(row_dict)
+        ret = []
+        for dictionary in dict_list:
+            ret.append(cls.create(**dictionary))
         return (ret)
