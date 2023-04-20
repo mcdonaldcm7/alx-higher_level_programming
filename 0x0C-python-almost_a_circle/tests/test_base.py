@@ -127,5 +127,23 @@ class TestBase(unittest.TestCase):
         rectangle = Rectangle(1, 2)
         rectangle.display()
         sys.stdout = sys.__stdout__
-        display = """#\n#"""
-        self.assertEqual(captured_output.getvalue().strip(), display)
+        display = "#\n#\n"
+        self.assertEqual(captured_output.getvalue(), display)
+
+    def test_rectangle_display1(self):
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        rectangle = Rectangle(1, 2, 1)
+        rectangle.display()
+        sys.stdout = sys.__stdout__
+        display = " #\n #\n"
+        self.assertEqual(captured_output.getvalue(), display)
+        
+    def test_rectangle_display2(self):
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        rectangle = Rectangle(1, 2, 1, 1)
+        rectangle.display()
+        sys.stdout = sys.__stdout__
+        display = "\n #\n #\n"
+        self.assertEqual(captured_output.getvalue(), display)
