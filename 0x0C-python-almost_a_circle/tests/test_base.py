@@ -35,3 +35,19 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_string,
         "[{\"x\": 2, \"width\": 10, \"id\": 1, \"height\": 7, \"y\": 8}]")
         self.assertIsInstance(json_string, str)
+
+    def test_from_json_string_none(self):
+        ret = Base.from_json_string(None)
+        self.assertEqual(ret, [])
+
+    def test_from_json_string_empty(self):
+        ret = Base.from_json_string("[]")
+        self.assertEqual(ret, [])
+
+    def test_from_json_string_dict(self):
+        ret = Base.from_json_string("[{\"id\": 89}]")
+        self.assertEqual(ret[0]["id"], 89)
+
+    def test_from_json_string_return(self):
+        ret = Base.from_json_string(None)
+        self.assertIsInstance(ret, list)
