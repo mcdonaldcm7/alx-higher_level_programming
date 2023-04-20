@@ -8,6 +8,7 @@ classes
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -146,3 +147,33 @@ class Base:
         for dictionary in dict_list:
             ret.append(cls.create(**dictionary))
         return (ret)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        t = turtle.Turtle()
+        init_x = -(turtle.window_width() / 2) + 5
+        init_y = (turtle.window_height() / 2) - 5
+        for rec in list_rectangles:
+            t.penup()
+            t.setpos(init_x, init_y)
+            t.pendown()
+            turtle.delay(50)
+            for i in range(4):
+                if i % 2 == 0:
+                    t.forward(rec.width)
+                else:
+                    t.forward(rec.height)
+                t.right(90)
+            turtle.clearscreen()
+            t.reset()
+
+        for sqr in list_squares:
+            t.penup()
+            t.setpos(init_x, init_y)
+            t.pendown()
+            turtle.delay(50)
+            for i in range(4):
+                t.forward(sqr.size)
+                t.right(90)
+            turtle.clearscreen()
+            turtle.reset()
