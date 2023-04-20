@@ -231,10 +231,11 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([])
         filename = "Square.json"
         json_repr = None
-        expected_repr = "[]"
         with open(filename, "r") as f:
             json_repr = f.read()
-        self.assertEqual(json_repr, expected_repr)
+        self.assertEqual(json_repr, "[]")
+        empty = json.loads(json_repr)
+        self.assertIsInstance(empty, list)
 
     def test_square_save_to_file3(self):
         Square.save_to_file([Square(1)])
