@@ -269,6 +269,8 @@ class TestRectangle(unittest.TestCase):
         with open(filename, "r") as f:
             json_repr = f.read()
         self.assertEqual(json_repr, expected_repr)
+        empty = json.loads(json_repr)
+        self.assertIsInstance(empty, list)
 
     def test_rectangle_save_to_file3(self):
         Rectangle.save_to_file([Rectangle(1, 2)])
