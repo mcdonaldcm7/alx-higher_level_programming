@@ -153,3 +153,108 @@ class TestBase(unittest.TestCase):
         dictionary = rectangle.to_dictionary()
         expected_dict = {'x': 0, 'y': 0, 'id': 1, 'height': 2, 'width': 1}
         self.assertEqual(dictionary, expected_dict)
+
+    def test_rectangle_update(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        rectangle.update(89)
+        self.assertEqual(rectangle.id, 89)
+
+    def test_rectangle_update1(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        rectangle.update(89, 3)
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 3)
+
+    def test_rectangle_update2(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        rectangle.update(89, 4, 6)
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 4)
+        self.assertEqual(rectangle.height, 6)
+
+    def test_rectangle_update3(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        rectangle.update(89, 5, 6, 3)
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 5)
+        self.assertEqual(rectangle.height, 6)
+        self.assertEqual(rectangle.x, 3)
+
+    def test_rectangle_update4(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        rectangle.update(89, 6, 7, 4, 5)
+        self.assertEqual(rectangle.id, 89)
+        self.assertEqual(rectangle.width, 6)
+        self.assertEqual(rectangle.height, 7)
+        self.assertEqual(rectangle.x, 4)
+        self.assertEqual(rectangle.y, 5)
+
+    def test_rectangle_update_kwarg(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        kwargs = {"id": 72}
+        rectangle.update(**kwargs)
+        self.assertEqual(rectangle.id, 72)
+
+    def test_rectangle_update_kwarg1(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        kwargs = {"id": 73, "width": 8}
+        rectangle.update(**kwargs)
+        self.assertEqual(rectangle.id, 73)
+        self.assertEqual(rectangle.width, 8)
+
+    def test_rectangle_update_kwarg2(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        kwargs = {"id": 22, "width": 5, "height": 7}
+        rectangle.update(**kwargs)
+        self.assertEqual(rectangle.id, 22)
+        self.assertEqual(rectangle.width, 5)
+        self.assertEqual(rectangle.height, 7)
+
+    def test_rectangle_update_kwarg3(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        kwargs = {"id": 22, "width": 5, "height": 7, "x": 5}
+        rectangle.update(**kwargs)
+        self.assertEqual(rectangle.id, 22)
+        self.assertEqual(rectangle.width, 5)
+        self.assertEqual(rectangle.height, 7)
+        self.assertEqual(rectangle.x, 5)
+
+    def test_rectangle_update_kwarg4(self):
+        rectangle = Rectangle(1, 2, id=2)
+        self.assertEqual(rectangle.id, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        kwargs = {"id": 22, "width": 5, "height": 7, "x": 5, "y": 10}
+        rectangle.update(**kwargs)
+        self.assertEqual(rectangle.id, 22)
+        self.assertEqual(rectangle.width, 5)
+        self.assertEqual(rectangle.height, 7)
+        self.assertEqual(rectangle.x, 5)
+        self.assertEqual(rectangle.y, 10)
