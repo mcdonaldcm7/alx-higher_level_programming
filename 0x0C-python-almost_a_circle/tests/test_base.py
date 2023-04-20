@@ -68,20 +68,20 @@ class TestBase(unittest.TestCase):
         self.assertEqual(rectangle.y, 4)
 
     def test_rectangle_init_error(self):
-        args = ("1", 2)
-        self.assertRaises(TypeError, Rectangle.__init__, *args)
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
 
     def test_rectangle_init_error2(self):
-        args = (1, "2")
-        self.assertRaises(TypeError, Rectangle.__init__, *args)
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
 
     def test_rectangle_init_error3(self):
-        args = (1, 2, "3")
-        self.assertRaises(TypeError, Rectangle.__init__, *args)
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
 
     def test_rectangle_init_error4(self):
-        args = (1, 2, 3, "4")
-        self.assertRaises(TypeError, Rectangle.__init__, *args)
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
 
     def test_rectangle_init_id(self):
         rectangle = Rectangle(1, 2, 3, 4, 5)
@@ -119,3 +119,6 @@ class TestBase(unittest.TestCase):
         rectangle = Rectangle(1, 2, id=1)
         string = "[Rectangle] (1) 0/0 - 1/2"
         self.assertEqual(rectangle.__str__(), string)
+
+    def test_rectangle_display(self):
+
