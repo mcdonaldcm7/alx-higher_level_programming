@@ -258,3 +258,38 @@ class TestBase(unittest.TestCase):
         self.assertEqual(rectangle.height, 7)
         self.assertEqual(rectangle.x, 5)
         self.assertEqual(rectangle.y, 10)
+
+    def test_rectangle_create(self):
+        dictionary = {"id" : 89}
+        rec = Rectangle.create(**dictionary)
+        self.assertEqual(rec.id, 89)
+
+    def test_rectangle_create1(self):
+        dictionary = {"id" : 89, "width": 42}
+        rec = Rectangle.create(**dictionary)
+        self.assertEqual(rec.id, 89)
+        self.assertEqual(rec.width, 42)
+
+    def test_rectangle_create2(self):
+        dictionary = {"id" : 89, "width": 42, "height": 13}
+        rec = Rectangle.create(**dictionary)
+        self.assertEqual(rec.id, 89)
+        self.assertEqual(rec.width, 42)
+        self.assertEqual(rec.height, 13)
+
+    def test_rectangle_create3(self):
+        dictionary = {"id" : 89, "width": 42, "height": 13, "x": 3}
+        rec = Rectangle.create(**dictionary)
+        self.assertEqual(rec.id, 89)
+        self.assertEqual(rec.width, 42)
+        self.assertEqual(rec.height, 13)
+        self.assertEqual(rec.x, 3)
+
+    def test_rectangle_create4(self):
+        dictionary = {"id" : 89, "width": 42, "height": 13, "x": 3, "y": 4}
+        rec = Rectangle.create(**dictionary)
+        self.assertEqual(rec.id, 89)
+        self.assertEqual(rec.width, 42)
+        self.assertEqual(rec.height, 13)
+        self.assertEqual(rec.x, 3)
+        self.assertEqual(rec.y, 4)
