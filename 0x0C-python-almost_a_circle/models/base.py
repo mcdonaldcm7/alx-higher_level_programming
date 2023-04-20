@@ -132,13 +132,13 @@ class Base:
             row_dict = {}
             if row[1] == row[2]:
                 row_dict["id"] = int(row[0])
-                row_dict["size"] =  int(row[1])
+                row_dict["size"] = int(row[1])
                 row_dict["x"] = int(row[3])
                 row_dict["y"] = int(row[4])
             else:
-                row_dict["id"] =  int(row[0])
+                row_dict["id"] = int(row[0])
                 row_dict["width"] = int(row[1])
-                row_dict["height"] =  int(row[2])
+                row_dict["height"] = int(row[2])
                 row_dict["x"] = int(row[3])
                 row_dict["y"] = int(row[4])
             dict_list.append(row_dict)
