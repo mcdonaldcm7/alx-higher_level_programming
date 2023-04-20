@@ -147,3 +147,9 @@ class TestBase(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display = "\n #\n #\n"
         self.assertEqual(captured_output.getvalue(), display)
+
+    def test_rectangle_to_dictionary(self):
+        rectangle = Rectangle(1, 2, id = 1)
+        dictionary = rectangle.to_dictionary()
+        expected_dict = {'x': 0, 'y': 0, 'id': 1, 'height': 2, 'width': 1}
+        self.assertEqual(dictionary, expected_dict)
