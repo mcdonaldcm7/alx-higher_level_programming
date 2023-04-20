@@ -119,6 +119,3 @@ class TestBase(unittest.TestCase):
         rectangle = Rectangle(1, 2, id=1)
         string = "[Rectangle] (1) 0/0 - 1/2"
         self.assertEqual(rectangle.__str__(), string)
-
-    def test_rectangle_display(self):
-
