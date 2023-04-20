@@ -2,6 +2,7 @@
 
 import unittest
 import sys
+import io
 sys.path.append('../')
 sys.path.append('models')
 Base = __import__('base').Base
@@ -119,3 +120,12 @@ class TestBase(unittest.TestCase):
         rectangle = Rectangle(1, 2, id=1)
         string = "[Rectangle] (1) 0/0 - 1/2"
         self.assertEqual(rectangle.__str__(), string)
+
+    def test_rectangle_display(self):
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        rectangle = Rectangle(1, 2)
+        rectangle.display()
+        sys.stdout = sys.__stdout__
+        display = """#\n#"""
+        self.assertEqual(captured_output.getvalue().strip(), display)
