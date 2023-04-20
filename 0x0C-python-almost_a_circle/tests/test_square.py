@@ -13,7 +13,7 @@ class TestSquare(unittest.TestCase):
 
 
     def test_square(self):
-        square = Square(1)
+        square = Square(1, id=1)
         self.assertEqual(square.id, 1)
         self.assertEqual(square.width, 1)
         self.assertEqual(square.height, 1)
