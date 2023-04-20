@@ -5,6 +5,7 @@ import sys
 sys.path.append('../')
 sys.path.append('models')
 Base = __import__('base').Base
+Rectangle = __import__('rectangle').Rectangle
 
 class TestBase(unittest.TestCase):
 
@@ -51,3 +52,70 @@ class TestBase(unittest.TestCase):
     def test_from_json_string_return(self):
         ret = Base.from_json_string(None)
         self.assertIsInstance(ret, list)
+
+    def test_rectagle(self):
+        rectangle = Rectangle(1, 2)
+        self.assertEqual(rectangle.id, 1)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+
+    def test_rectangle_x(self):
+        rectangle = Rectangle(1, 2, 3)
+        self.assertEqual(rectangle.x, 3)
+
+    def test_rectangle_y(self):
+        rectangle = Rectangle(1, 2, 3, 4)
+        self.assertEqual(rectangle.y, 4)
+
+    def test_rectangle_init_error(self):
+        args = ("1", 2)
+        self.assertRaises(TypeError, Rectangle.__init__, *args)
+
+    def test_rectangle_init_error2(self):
+        args = (1, "2")
+        self.assertRaises(TypeError, Rectangle.__init__, *args)
+
+    def test_rectangle_init_error3(self):
+        args = (1, 2, "3")
+        self.assertRaises(TypeError, Rectangle.__init__, *args)
+
+    def test_rectangle_init_error4(self):
+        args = (1, 2, 3, "4")
+        self.assertRaises(TypeError, Rectangle.__init__, *args)
+
+    def test_rectangle_init_id(self):
+        rectangle = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(rectangle.id, 5)
+
+    def test_rectangle_val_excpt(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
+    def test_rectangle_val_excpt1(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_rectangle_val_excpt2(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_rectangle_val_excpt3(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_rectangle_val_excpt4(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+
+    def test_rectangle_val_excpt5(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
+    def test_rectangle_area(self):
+        rectangle = Rectangle(2, 10)
+        self.assertEqual(rectangle.area(), 20)
+
+    def test_rectangle_str(self):
+        rectangle = Rectangle(1, 2, id=1)
+        string = "[Rectangle] (1) 0/0 - 1/2"
+        self.assertEqual(rectangle.__str__(), string)
