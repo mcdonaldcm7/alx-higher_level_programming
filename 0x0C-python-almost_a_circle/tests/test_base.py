@@ -3,6 +3,8 @@
 import unittest
 import sys
 import io
+import json
+import os
 sys.path.append('../')
 sys.path.append('models')
 Base = __import__('base').Base
@@ -293,3 +295,46 @@ class TestBase(unittest.TestCase):
         self.assertEqual(rec.height, 13)
         self.assertEqual(rec.x, 3)
         self.assertEqual(rec.y, 4)
+
+    def test_rectangle_save_to_file(self):
+        Rectangle.save_to_file(None)
+        filename = "Rectangle.json"
+        json_repr = None
+        expected_repr = "[]"
+        with open(filename, "r") as f:
+            json_repr = f.read()
+        self.assertEqual(json_repr, expected_repr)
+
+    def test_rectangle_save_to_file2(self):
+        Rectangle.save_to_file([])
+        filename = "Rectangle.json"
+        json_repr = None
+        expected_repr = "[]"
+        with open(filename, "r") as f:
+            json_repr = f.read()
+        self.assertEqual(json_repr, expected_repr)
+
+    def test_rectangle_save_to_file3(self):
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        filename = "Rectangle.json"
+        json_repr = None
+        with open(filename, "r") as f:
+            json_repr = f.read()
+        rect = Rectangle(5, 5)
+        dictionary = json.loads(json_repr)[0]
+        rect.update(**dictionary)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+
+    def test_rectangle_load_from_file(self):
+        if not os.path.exists('Rectangle.json'):
+            list_obj = Rectangle.load_from_file()
+            self.assertIsInstance(list_obj, list)
+            self.assertEqual(list_obj, [])
+
+    def test_rectangle_load_from_file2(self):
+        if os.path.exists('Rectangle.json'):
+            list_obj = Rectangle.load_from_file()
+            self.assertIsInstance(list_obj, list)
+            for obj in list_obj:
+                self.assertIsInstance
