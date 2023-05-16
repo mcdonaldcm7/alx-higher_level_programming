@@ -1,9 +1,9 @@
 ## Project: SQL - Introduction
 
-#### Learning Objectives
+### Learning Objectives
 At the end of this project, I am expected to be able to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/), **without the help of Google:**
 
-###### General
+#### General
 - What’s a database
 - What’s a relational database
 - What does SQL stand for
