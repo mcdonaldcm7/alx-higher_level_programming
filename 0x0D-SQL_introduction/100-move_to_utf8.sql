@@ -4,5 +4,4 @@ ALTER TABLE first_name
 	MODIFY COLUMN name
 	CHARACTER SET utf8
 	COLLATE utf8_general_ci;
-ALTER TABLE first_name CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 ALTER DATABASE hbtn_0c_o CHARACTER SET utf8 
