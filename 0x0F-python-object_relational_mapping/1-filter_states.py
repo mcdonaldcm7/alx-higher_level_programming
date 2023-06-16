@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""
+This module uses the MySQLdb to connect to the database passed as argument and
+prints all the states of the 'hbtn_0e_0_usa' database that begin with the
+letter 'N'
+"""
+
+
+import MySQLdb
+import sys
+
+
+if __name__ == "__main__":
+    usr = sys.argv[1]
+    pwd = sys.argv[2]
+    db = sys.argv[3]
+
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=usr, password=pwd, database=db)
+
+    cur = db.cursor()
+    cur.execute(f"SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
