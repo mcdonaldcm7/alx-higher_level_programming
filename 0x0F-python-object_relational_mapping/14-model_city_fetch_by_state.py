@@ -25,3 +25,4 @@ if __name__ == "__main__":
     for instance in session.query(City, State).join(State).order_by(City.id):
         print("{}: ({}) {}".format(
             instance.State.name, instance.City.id, instance.City.name))
+    session.close()
