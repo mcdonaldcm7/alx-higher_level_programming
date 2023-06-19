@@ -28,4 +28,3 @@ class City(Base):
                 autoincrement=True, unique=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-    states = relationship("State", back_populates="cities")
