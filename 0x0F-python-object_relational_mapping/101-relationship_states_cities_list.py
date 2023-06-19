@@ -27,6 +27,6 @@ if __name__ == "__main__":
     for instance in instances:
         print("{}: {}".format(instance.id, instance.name))
         for city in instance.cities:
-            print("    {}: {}".format(city.id, city.name))
+            print("\t{}: {}".format(city.id, city.name))
     session.commit()
     session.close()
