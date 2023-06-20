@@ -19,7 +19,10 @@ if __name__ == "__main__":
             host='localhost', port=3306, user=usr, password=pwd, database=db)
 
     cur = conn.cursor()
-    sql_query = f"SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    sql_query = """
+    SELECT * FROM states
+    WHERE name COLLATE utf8_bin = 'N%' ORDER BY id ASC
+    """
     cur.execute(sql_query)
     rows = cur.fetchall()
     for row in rows:
