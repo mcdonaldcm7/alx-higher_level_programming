@@ -29,4 +29,4 @@ class State(Base):
                 nullable=False, autoincrement=True, unique=True)
     name = Column(String(128), nullable=False)
 
-    cities = relationship("City")
+    cities = relationship("City", cascade="all, delete")
