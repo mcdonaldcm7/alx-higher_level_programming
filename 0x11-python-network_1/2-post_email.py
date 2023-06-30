@@ -14,4 +14,4 @@ if __name__ == "__main__":
     data = data.encode("ascii")
     req = urllib.request.Request(sys.argv[1], sys.argv[2])
     with urllib.request.urlopen(req) as response:
-        print(response.read().decode("utf-8"))
+        print(response.read().decode("utf-8"), end="")
