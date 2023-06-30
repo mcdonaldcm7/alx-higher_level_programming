@@ -3,15 +3,21 @@
 Definition for a function that finds a peak in a list of unsorted integers.
 """
 
-def find_peak(list_of_integers):
+def find_peak(nums):
     """Finds and returns a peak in a list of unsorted integers"""
-    if not list_of_integers:
+    if not nums:
         return (None)
-    mid = int(len(list_of_integers) / 2);
-    peak = list_of_integers[mid]
-    if (mid > 1 and list_of_integers[mid -1] > peak):
-        peak = list_of_integers[mid - 1]
-    if ((mid + 1) < len(list_of_integers) and
-        list_of_integers[mid + 1] > peak):
-        peak = list_of_integers[mid + 1]
-    return (peak)
+    peak = []
+    size = len(nums)
+    if size > 1 and nums[0] > nums[1]:
+        peak.append(nums[0])
+    if size > 1 and nums[size - 1] > nums[size - 2]:
+        peak.append(nums[size - 1])
+        
+    for i in range(1, size - 1):
+        if nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:
+            peak.append(nums[i])
+    if len(peak) > 0:
+        return (max(peak))
+    else:
+        return (nums[0])
