@@ -9,6 +9,8 @@ import sys
 
 if __name__ == "__main__":
     bad_r = requests.get(sys.argv[1])
-    code = bar_r.status_code
+    code = bad_r.status_code
     if code >= 400:
         print("Error code: {}".format(code))
+    else:
+        print(bad_r.text)
