@@ -19,5 +19,5 @@ if __name__ == "__main__":
             key.get("sha"),
             key.get("commit").get("author").get("name")))
         count += 1
-        if (count > 10):
+        if (count >= 10):
             break
