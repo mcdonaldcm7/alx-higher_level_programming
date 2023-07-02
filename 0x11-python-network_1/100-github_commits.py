@@ -15,9 +15,9 @@ if __name__ == "__main__":
     res = r.json()
     count = 0
     for key in res:
-        if (count > 10):
-            break
         print("{}: {}".format(
             key.get("sha"),
             key.get("commit").get("author").get("name")))
         count += 1
+        if (count > 10):
+            break
