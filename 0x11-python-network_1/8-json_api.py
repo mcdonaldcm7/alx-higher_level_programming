@@ -14,6 +14,8 @@ if __name__ == "__main__":
         res = r.json()
         if len(res) == 0:
             print("No result")
+        elif r.status_code >= 400:
+            print("Not a valid JSON")
         else:
             print("[{}] {}".format(res.get("id"), res.get("name")))
     except requests.exceptions.JSONDecodeError as e:
